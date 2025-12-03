@@ -3,13 +3,18 @@ import axiosConfig from '../api'
 
 abstract class BaseEntityApi<T> {
   constructor(public baseUrl: string) {}
-  async getAll(params?: Record<string, string>): Promise<AxiosResponse<Array<T>>> {
+  async getAll(
+    params?: Record<string, string>,
+  ): Promise<AxiosResponse<Array<T>>> {
     return axiosConfig.get(this.baseUrl, { params })
   }
   async getById(id: string): Promise<AxiosResponse<T>> {
     return axiosConfig.get(`${this.baseUrl}/${id}`)
   }
-  async create(payload: Partial<T>, headers?: Record<string, string>): Promise<AxiosResponse<T>> {
+  async create(
+    payload: Partial<T>,
+    headers?: Record<string, string>,
+  ): Promise<AxiosResponse<T>> {
     return axiosConfig.post(this.baseUrl, payload, { headers })
   }
   async update(id: string, payload: Partial<T>): Promise<AxiosResponse<T>> {
