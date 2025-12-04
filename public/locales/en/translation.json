@@ -1,5 +1,29 @@
 {
   "landing": {
     "header": "Welcome"
+  },
+  "hero": {
+    "badge": "Powered by AI",
+    "title": "Turn Your Ingredients Into Delicious Dishes With",
+    "titleAI": "AI",
+    "description": "Take a photo or describe the ingredients you have. AI will detect them and suggest suitable recipes instantly.",
+
+    "ctaTry": "Try for free",
+    "ctaDemo": "Watch demo",
+
+    "benefits": {
+      "free": "Free basic plan",
+      "accuracy": "High AI accuracy"
+    },
+
+    "analysis": {
+      "tomato": "92%",
+      "onion": "88%"
+    },
+
+    "badges": {
+      "detection": "AI Detection",
+      "recipes": "15+ recipes"
+    }
   }
 }

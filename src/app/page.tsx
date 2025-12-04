@@ -1,18 +1,16 @@
 'use client'
-import { useTranslation } from 'react-i18next'
-import LanguageDropdown from '~/components/common/language-dropdown'
 import '~/i18n'
+import { Fragment } from 'react'
+import LandingPage from './(home)/landing-page'
 
-export default function LandingPage() {
-  const { t } = useTranslation()
+export function AppContent() {
   return (
-    <div className="">
-      <section className="container mx-auto w-screen bg-slate-50 dark:bg-black">
-        <div className="my-10 flex justify-between">
-          <h1 className="text-4xl font-light">{t('landing.header')}</h1>
-          <LanguageDropdown />
-        </div>
-      </section>
-    </div>
+    <Fragment>
+      <LandingPage />
+    </Fragment>
   )
+}
+
+export default function Page() {
+  return <AppContent />
 }

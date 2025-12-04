@@ -14,7 +14,7 @@ const ROLES = {
   user: ['view:comments', 'create:comments'],
 }
 
-export function hasPermission(user: User, permission: Permission) {
+export default function hasPermission(user: User, permission: Permission) {
   return user.roles.some((role) =>
     (ROLES[role] as readonly Permission[]).includes(permission),
   )

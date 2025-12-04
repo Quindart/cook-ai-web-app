@@ -1,5 +1,28 @@
 {
   "landing": {
     "header": "Xin chào "
+  },
+  "hero": {
+    "badge": "Powered by AI",
+    "title": "Biến Nguyên Liệu Thành Món Ngon Với",
+    "titleAI": "AI",
+    "description": "Chụp ảnh hoặc mô tả nguyên liệu bạn có. AI sẽ nhận diện và gợi ý công thức phù hợp ngay lập tức.",
+
+    "ctaTry": "Dùng thử miễn phí",
+    "ctaDemo": "Xem demo",
+
+    "benefits": {
+      "free": "Miễn phí cơ bản",
+      "accuracy": "AI chính xác"
+    },
+
+    "analysis": {
+      "tomato": "92%",
+      "onion": "88%"
+    },
+    "badges": {
+      "detection": "AI Detection",
+      "recipes": "15+ recipes"
+    }
   }
 }
