@@ -1,0 +1,134 @@
+{
+  "colors": {
+    "primary": {
+      "light": "#FF9F59",
+      "dark": "#FFB380",
+      "description": "Warm orange - main brand color for CTAs and primary interactions"
+    },
+    "secondary": {
+      "light": "#7CCF8A",
+      "dark": "#9FE0B0",
+      "description": "Soft green - accent color for success states and ingredient match highlights"
+    },
+    "foreground": {
+      "light": "#2F2F2F",
+      "dark": "#F2F2F2",
+      "description": "Primary text color"
+    },
+    "muted-foreground": {
+      "light": "#6B6B6B",
+      "dark": "#A0A0A0",
+      "description": "Secondary text color for metadata and descriptions"
+    },
+    "background": {
+      "light": "#FAFAFA",
+      "dark": "#1A1A1A",
+      "description": "Page background"
+    },
+    "card": {
+      "light": "#FFFFFF",
+      "dark": "#2D2D2D",
+      "description": "Card and elevated surface background"
+    },
+    "border": {
+      "light": "#E5E5E5",
+      "dark": "#4A4A4A",
+      "description": "Border color for cards and inputs"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "sans": "Inter, Geist",
+      "display": "Playfair Display",
+      "mono": "Geist Mono"
+    },
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem"
+    },
+    "weights": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.6,
+      "loose": 1.8
+    }
+  },
+  "spacing": {
+    "unit": "0.25rem",
+    "scale": {
+      "0": "0",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "12": "3rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem"
+    }
+  },
+  "radius": {
+    "sm": "0.5rem",
+    "md": "0.875rem",
+    "lg": "1.125rem",
+    "xl": "1.375rem",
+    "2xl": "1.5rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "background": "var(--primary)",
+        "foreground": "var(--primary-foreground)",
+        "hover": "opacity-90",
+        "borderRadius": "1.125rem",
+        "padding": "0.75rem 1.5rem",
+        "fontSize": "1rem",
+        "fontWeight": 600
+      },
+      "secondary": {
+        "background": "var(--secondary)",
+        "foreground": "var(--secondary-foreground)",
+        "hover": "opacity-90",
+        "borderRadius": "1.125rem"
+      }
+    },
+    "card": {
+      "background": "var(--card)",
+      "borderRadius": "1.125rem",
+      "borderColor": "var(--border)",
+      "padding": "1.5rem",
+      "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)"
+    },
+    "chip": {
+      "borderRadius": "1.5rem",
+      "padding": "0.5rem 1rem",
+      "fontSize": "0.875rem",
+      "fontWeight": 500
+    }
+  }
+}

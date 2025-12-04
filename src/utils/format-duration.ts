@@ -20,7 +20,7 @@ function getLabels(lang?: string): UnitLabels {
   return LABELS_BY_LANG[base] || LABELS_BY_LANG[DEFAULT_LOCALE]
 }
 
-export function formatDurationFromMinutes(
+export default function formatDurationFromMinutes(
   totalMinutes: number,
   lang?: string,
 ): string {

@@ -1,0 +1,190 @@
+{
+  "endpoints": {
+    "imageDetection": {
+      "path": "/api/detect/image",
+      "method": "POST",
+      "description": "Detect ingredients from uploaded image using AI vision",
+      "auth": "required",
+      "tier": "pro",
+      "request": {
+        "type": "multipart/form-data",
+        "fields": {
+          "image": "File (image/*)",
+          "language": "string (optional, default: 'vi')"
+        }
+      },
+      "response": {
+        "success": {
+          "status": 200,
+          "body": {
+            "ingredients": [
+              {
+                "name": "string",
+                "icon": "string (emoji)",
+                "confidence": "number (0-100)",
+                "category": "string"
+              }
+            ],
+            "detectionTime": "number (ms)"
+          }
+        },
+        "error": {
+          "status": 400,
+          "body": {
+            "error": "string",
+            "message": "string"
+          }
+        }
+      }
+    },
+    "textAnalysis": {
+      "path": "/api/analyze/text",
+      "method": "POST",
+      "description": "Analyze ingredient text and return detected items",
+      "auth": "optional",
+      "tier": "free",
+      "rateLimit": "5 requests/day for free users, unlimited for pro",
+      "request": {
+        "type": "application/json",
+        "body": {
+          "text": "string",
+          "language": "string (optional)"
+        }
+      },
+      "response": {
+        "success": {
+          "status": 200,
+          "body": {
+            "ingredients": [
+              {
+                "name": "string",
+                "confidence": "number",
+                "quantity": "string (optional)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "recipeSearch": {
+      "path": "/api/recipes/search",
+      "method": "GET",
+      "description": "Search recipes based on ingredients and filters",
+      "request": {
+        "type": "application/json",
+        "query": {
+          "ingredients": "string[] (comma-separated)",
+          "time": "number (minutes, optional)",
+          "cuisine": "string (optional)",
+          "difficulty": "string (easy|medium|hard, optional)",
+          "diet": "string (optional)",
+          "limit": "number (default: 10)",
+          "offset": "number (default: 0)"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "recipes": [
+            {
+              "id": "string",
+              "name": "string",
+              "matchLevel": "number (0-100)",
+              "time": "number (minutes)",
+              "difficulty": "string",
+              "servings": "number",
+              "rating": "number",
+              "ingredients": [
+                {
+                  "name": "string",
+                  "amount": "string",
+                  "found": "boolean"
+                }
+              ],
+              "instructions": "string[]"
+            }
+          ],
+          "total": "number"
+        }
+      }
+    },
+    "chatAssistant": {
+      "path": "/api/chat",
+      "method": "POST",
+      "description": "AI chat assistant for cooking advice",
+      "auth": "optional",
+      "request": {
+        "type": "application/json",
+        "body": {
+          "message": "string",
+          "conversationId": "string (optional)",
+          "context": "object (optional)"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "response": "string",
+          "conversationId": "string",
+          "suggestions": "string[] (optional)"
+        }
+      }
+    },
+    "shoppingList": {
+      "path": "/api/shopping-list",
+      "method": "POST",
+      "description": "Generate shopping list from recipe",
+      "auth": "required",
+      "request": {
+        "type": "application/json",
+        "body": {
+          "recipeId": "string",
+          "servings": "number",
+          "hasIngredients": "string[]"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "name": "string",
+              "quantity": "string",
+              "unit": "string",
+              "category": "string"
+            }
+          ],
+          "exportFormats": ["csv", "pdf", "json"]
+        }
+      }
+    },
+    "saveRecipe": {
+      "path": "/api/recipes/save",
+      "method": "POST",
+      "description": "Save recipe to user favorites",
+      "auth": "required",
+      "request": {
+        "type": "application/json",
+        "body": {
+          "recipeId": "string",
+          "notes": "string (optional)"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "saved": "boolean",
+          "savedAt": "ISO8601 timestamp"
+        }
+      }
+    }
+  },
+  "errors": {
+    "400": "Bad Request - Invalid input",
+    "401": "Unauthorized - Auth required",
+    "403": "Forbidden - Insufficient permissions",
+    "404": "Not Found - Resource not found",
+    "429": "Too Many Requests - Rate limit exceeded",
+    "500": "Internal Server Error"
+  }
+}
